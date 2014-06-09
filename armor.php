@@ -19,16 +19,14 @@ class Armor implements Plugin{
     public function init()
     {
      
-            $this->api->addHandler("player.touch.block", array($this, "EventHandler"));
-            }
-            
-             public function EventHandler($data, $event)
-    {
-        switch($event)
-        {
-            case "player.touch.block":
-
-                if($data["item"]->getID() == 57)
+            $this->api->addHandler("player.touch.block", array($this, "EventHandler1"));
+            $this->api->addHandler("player.touch.block", array($this, "EventHandler2"));
+            $this->api->addHandler("player.touch.block", array($this, "EventHandler3"));
+    }
+    
+    public function EventHandler1($data, $event)
+    
+     if($data["item"]->getID() == 57)
                 {
       $data->setArmor(0,$this->getArmor(310));
       $data->setArmor(1,$this->getArmor(311));
@@ -36,37 +34,33 @@ class Armor implements Plugin{
       $data->setArmor(3,$this->getArmor(313));
                 
                 }
-                  break;
-                  
-                  
-                  case "player.touch.block":
-
-                if($data["item"]->getID() == 41)
+                
+         public function EventHandler2($data, $event)
+         
+         if($data["item"]->getID() == 41)
                 {
       $data->setArmor(0,$this->getArmor(314));
       $data->setArmor(1,$this->getArmor(315));
       $data->setArmor(2,$this->getArmor(316));
       $data->setArmor(3,$this->getArmor(317));
                 }
-                  break;
-                 
-
-                  case "player.touch.block":
-
+                
+                public function EventHandler3($data, $event)
+                
                 if($data["item"]->getID() == 42)
                 {
-      $data->setArmor(0,$this->getArmor(306));
-      $data->setArmor(1,$this->getArmor(307));
-      $data->setArmor(2,$this->getArmor(308));
-      $data->setArmor(3,$this->getArmor(309));
+      $data->setArmor(0,$this->getArmor(314));
+      $data->setArmor(1,$this->getArmor(315));
+      $data->setArmor(2,$this->getArmor(316));
+      $data->setArmor(3,$this->getArmor(317));
                 }
-            
-                  break;
-                  
-        }
-    }
-                  
+         
           public function __destruct(){
     }
                 
 }
+         
+         
+         
+                
+            
