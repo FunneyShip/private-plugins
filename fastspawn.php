@@ -21,8 +21,8 @@ class Spawn implements Plugin
 
     public function init()
     {
-    $this->api->addHandler("player.respawn", array($this, "handle"));
-    $this->api->addHnadler("player.equipment.change", array($this, "handle"));
+    $this->api->addHandler("player.respawn", array($this, "EventHandler"));
+    $this->api->addHandler("player.equipment.change", array($this, "EventHandler"));
     }
     
      public function EventHandler($data, $event){
