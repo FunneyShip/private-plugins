@@ -24,7 +24,7 @@ class Armor implements Plugin{
             $this->api->addHandler("player.touch.block", array($this, "EventHandler3"));
     }
     
-    public function EventHandler1($data, $event)
+    public function EventHandler1($data, $event){
     
      if($data["item"]->getID() == 57)
                 {
@@ -34,8 +34,8 @@ class Armor implements Plugin{
       $data->setArmor(3,$this->getArmor(313));
                 
                 }
-                
-         public function EventHandler2($data, $event)
+    }
+         public function EventHandler2($data, $event){
          
          if($data["item"]->getID() == 41)
                 {
@@ -44,8 +44,8 @@ class Armor implements Plugin{
       $data->setArmor(2,$this->getArmor(316));
       $data->setArmor(3,$this->getArmor(317));
                 }
-                
-                public function EventHandler3($data, $event)
+         }
+                public function EventHandler3($data, $event){
                 
                 if($data["item"]->getID() == 42)
                 {
@@ -54,7 +54,7 @@ class Armor implements Plugin{
       $data->setArmor(2,$this->getArmor(316));
       $data->setArmor(3,$this->getArmor(317));
                 }
-         
+                }
           public function __destruct(){
     }
                 
